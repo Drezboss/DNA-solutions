@@ -1,0 +1,10 @@
+:root {
+  --brand-teal: #00b3b3;
+  --brand-teal-light: #00e8e8;
+  --brand-black: #0d0d0d;
+  --brand-white: #fff;
+  --brand-grey: #e0e0e0;
+  --brand-dark-grey: #222;
+  --font-main: 'Montserrat', 'Poppins', 'Nunito Sans', Arial, sans-serif;
+}
+/* ...rest of the styles as previously provided... */
