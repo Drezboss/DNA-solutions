@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0B6623"/>
+      <stop offset="1" stop-color="#0A4F1C"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" rx="28" fill="url(#g)"/>
+  <g fill="#fff" font-family="Segoe UI, Roboto, Arial" font-weight="800">
+    <text x="48" y="140" font-size="96">DNA</text>
+    <text x="48" y="220" font-size="64" font-weight="700" opacity=".95">Solutions</text>
+  </g>
+  <g transform="translate(460,64)">
+    <rect x="0" y="0" width="116" height="116" rx="22" fill="#fff" opacity=".12"/>
+    <path d="M12 92c42-20 42-68 84-88M12 24c42 20 42 68 84 88" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
