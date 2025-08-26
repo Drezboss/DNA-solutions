@@ -1,565 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Core meta -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Default SEO (auto-swapped by JS per section) -->
-  <title>DNA Solutions | Commercial & Domestic Cleaning Gloucestershire</title>
-  <meta name="description" content="Professional 2-person cleaning & gardening teams in the Forest of Dean. Our 50-point standard ensures a deeper, more reliable clean. Fully insured. Get your free quote today.">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="DNA Solutions: Essential Property Care for Gloucestershire">
-  <meta property="og:description" content="Professional, reliable cleaning & gardening for homes and businesses. Built on integrity and excellence.">
-  <meta property="og:url" content="https://drezboss.github.io/DNA-solutions/">
-  <meta property="og:image" content="https://drezboss.github.io/DNA-solutions/assets/logo.svg">
-
-  <!-- Icons & fonts -->
-  <link rel="icon" href="assets/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    :root{
-      --brand:#0B6623; --brand-ink:#064016; --ink:#102118; --muted:#5a6b62; --bg:#f7fbf8; --card:#ffffff;
-      --ring:0 0 0 4px color-mix(in srgb, var(--brand) 25%, transparent);
-      --radius:14px; --shadow:0 10px 30px rgba(7,42,22,.10); --grid:clamp(16px,3vw,28px)
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-    a{color:var(--brand);text-decoration:none}
-    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;box-shadow:var(--ring)}
-
-    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(8px);background:color-mix(in srgb, white 80%, var(--bg) 20%);border-bottom:1px solid #e7efe9}
-    .nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px var(--grid)}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
-    .brand .logo{width:40px;height:40px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
-    .brand .logo img{width:24px;height:24px;filter:invert(1)}
-    .brand small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:-6px}
-    nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:6px;flex-wrap:wrap}
-    nav a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;color:var(--ink);transition:.2s background,.2s color}
-    nav a.active,nav a:hover{background:#e9f5ee;color:var(--brand-ink)}
-    .cta{margin-left:8px;background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700;box-shadow:0 6px 18px rgba(11,102,35,.25)}
-
-    .hero{background:
-      radial-gradient(1200px 600px at 100% -10%, rgba(11,102,35,.18), transparent 60%),
-      linear-gradient(180deg,#fff,#f4faf6 60%,#eef7f1);border-bottom:1px solid #e7efe9}
-    .hero .inner{max-width:1200px;margin:auto;padding:clamp(40px,8vw,120px) var(--grid)}
-    .eyebrow{display:inline-block;background:#e9f5ee;color:var(--brand-ink);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:700}
-    h1{font-size:clamp(32px,4.8vw,56px);line-height:1.08;margin:14px 0 12px}
-    .sub{font-size:clamp(16px,2.3vw,22px);color:var(--muted);max-width:820px}
-    .hero-cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;border:1px solid #d9e8df;background:#fff}
-    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
-    .btn.secondary:hover{background:#f0f7f3}
-    .badges{display:flex;gap:16px;margin-top:18px;color:var(--muted);font-size:14px;flex-wrap:wrap}
-    .badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #e3efe8;padding:8px 12px;border-radius:999px}
-
-    section{scroll-margin-top:84px}
-    .wrap{max-width:1200px;margin:auto;padding:56px var(--grid)}
-    h2{font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:0 0 12px}
-    p.lead{font-size:18px;color:var(--muted)}
-    .grid{display:grid;gap:18px}
-    .cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.cols-2{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid #e6efe9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .highlight{background:#0b662312;border-left:4px solid var(--brand);padding:14px;border-radius:12px}
-
-    .service{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid #e6efe9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .service .icon{min-width:44px;height:44px;border-radius:12px;background:#e9f5ee;display:grid;place-items:center;color:var(--brand-ink);font-weight:900}
-
-    .checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    @media (max-width:800px){.checklist{grid-template-columns:1fr}}
-    .checklist .category{background:#fff;border:1px solid #e6efe9;border-radius:14px;padding:18px}
-    .checklist .category h4{margin:0 0 8px}
-    .download{display:flex;gap:12px;align-items:center;margin-top:14px}
-
-    form{display:grid;gap:14px;background:#fff;border:1px solid #e6efe9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    label{font-weight:700;font-size:14px}
-    input,select,textarea{width:100%;padding:12px;border:1px solid #dfe9e3;border-radius:10px;font:inherit;background:#fbfdfc}
-    textarea{min-height:120px}
-    .notice{font-size:14px;color:var(--muted)}
-    .trust{display:grid;grid-auto-flow:column;gap:10px;align-items:center;justify-content:flex-start;margin-top:8px}
-    .trust>span{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #e6efe9;padding:8px 12px;border-radius:999px}
-    .error{color:#b00020;font-size:14px}.success{color:var(--brand-ink);font-weight:700}
-
-    footer{margin-top:36px;background:#0a3f1a;color:#d7ebdf}
-    footer .wrap{padding-top:28px;padding-bottom:28px}
-    .footgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px}
-    @media (max-width:900px){.footgrid{grid-template-columns:1fr}}
-    .copyright{border-top:1px solid #1c5b2e;margin-top:16px;padding-top:12px;font-size:14px;color:#b7d2c4}
-  </style>
-
-  <!-- JSON-LD (LocalBusiness) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"DNA Solutions",
-    "image":"https://drezboss.github.io/DNA-solutions/assets/logo.svg",
-    "url":"https://drezboss.github.io/DNA-solutions/",
-    "telephone":"+44 1234 567890",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Your Street Address",
-      "addressLocality":"Forest of Dean",
-      "addressRegion":"Gloucestershire",
-      "postalCode":"GLxx XXX",
-      "addressCountry":"UK"
-    },
-    "geo":{"@type":"GeoCoordinates","latitude":"51.8022","longitude":"-2.5480"},
-    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
-    "sameAs":[
-      "https://www.facebook.com/YourBusinessPage",
-      "https://www.instagram.com/YourBusinessPage",
-      "https://www.linkedin.com/company/YourBusinessPage"
-    ],
-    "priceRange":"££",
-    "description":"DNA Solutions: Professional Commercial & Domestic Cleaning & Gardening Services in Gloucestershire. Our unique two-person teams deliver a deeper, more reliable clean. Fully insured. Get a free quote today.",
-    "serviceType":["Commercial Cleaning","Domestic Cleaning","Gardening","Grounds Maintenance"]
-  }
-  </script>
-
-  <!-- jsPDF for PDF export -->
-  <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8">
+  <title>DNA Solutions – Property Care</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles/brand.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header class="site" role="banner">
-    <div class="nav" aria-label="Primary">
-      <a class="brand" href="#home" aria-label="DNA Solutions Home">
-        <span class="logo" aria-hidden="true"><img src="assets/favicon.svg" alt=""></span>
-        <span>DNA Solutions<small>Gloucestershire</small></span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#home" data-route="home" class="active">Home</a></li>
-          <li><a href="#services" data-route="services">Services</a></li>
-          <li><a href="#dna-standard" data-route="dna-standard">The DNA Standard</a></li>
-          <li><a href="#about" data-route="about">About Us</a></li>
-          <li><a href="#contact" data-route="contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="cta" onclick="location.hash='#contact'">Get Free Quote</button>
-    </div>
+  <header>
+    <img src="assets/logo.svg" alt="DNA Solutions logo" class="logo" />
+    <nav>
+      <a href="#benefits">Benefits</a>
+      <a href="#services">Services</a>
+      <a href="#dna-standard">DNA Standard</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- HOME -->
-  <main id="home" class="hero" aria-labelledby="home-title">
-    <div class="inner">
-      <span class="eyebrow">DNA Solutions</span>
-      <h1 id="home-title">Essential Property Care for Gloucestershire</h1>
-      <p class="sub">Professional, Reliable Cleaning &amp; Gardening Services for Homes and Businesses. Built on Integrity and Excellence.</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="#contact">Get Your Free Quote</a>
-        <a class="btn secondary" href="#services">Explore Services</a>
-      </div>
-      <div class="badges" aria-label="Trust badges">
-        <span class="badge">✅ Fully Insured</span>
-        <span class="badge">⭐ 5-Star Rated on Google</span>
-        <span class="badge">🏡 Local Forest of Dean Business</span>
-      </div>
-    </div>
-  </main>
-
-  <!-- Benefits -->
-  <section class="wrap" aria-labelledby="benefits-title">
-    <h2 id="benefits-title">Why Choose Us?</h2>
-    <p class="lead">Four reasons clients trust DNA Solutions for a deeper, more reliable clean.</p>
-    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
-      <div class="card"><h3>The Two-Person Advantage</h3><p>Our dedicated 2-person teams deliver a deeper, more efficient clean in half the time.</p></div>
-      <div class="card"><h3>The DNA Standard</h3><p>Every service follows our rigorous 50-point checklist for guaranteed excellence.</p></div>
-      <div class="card"><h3>Local &amp; Accountable</h3><p>Family-run in the Forest of Dean. Our reputation is everything.</p></div>
-      <div class="card"><h3>Fully Insured &amp; Trusted</h3><p>Professional cover for your complete peace of mind.</p></div>
-    </div>
-    <div class="highlight" style="margin-top:18px"><strong>👉 Experience the Difference.</strong> <a href="#contact">Get Your Free Quote Today</a>.</div>
+  <section class="hero">
+    <h1 class="hero-title">Premium <span class="highlight">Property Care</span> for Every Home</h1>
+    <p class="hero-subtitle">DNA Solutions brings you professional, trustworthy property maintenance with guaranteed standards, transparency, and a personal touch.</p>
+    <button class="btn-primary">Get a Quote</button>
+    <button class="btn-secondary">See Our Services</button>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="wrap" aria-labelledby="services-title">
-    <h2 id="services-title">Professional Cleaning &amp; Gardening Services</h2>
-    <p class="lead">Comprehensive property care solutions for Gloucestershire homes and businesses.</p>
-
-    <div class="grid" style="gap:16px">
-      <article class="service" aria-labelledby="svc-comm-title">
-        <div class="icon" aria-hidden="true">🏢</div>
-        <div>
-          <h3 id="svc-comm-title">Commercial Cleaning</h3>
-          <p>Minimize disruption and maximize productivity with our professional commercial cleaning services. We specialize in medical facilities, offices, and professional suites, offering daytime or evening cleans that adhere to the highest standards of hygiene and presentation.</p>
-          <p class="notice"><strong>SEO:</strong> Commercial Cleaning Services Gloucestershire | DNA Solutions — Specialist daytime &amp; evening cleaning for Gloucestershire businesses: medical practices, offices &amp; more. Minimal disruption, maximum hygiene. Fully insured. Get a quote.</p>
-        </div>
-      </article>
-
-      <article class="service" aria-labelledby="svc-dom-title">
-        <div class="icon" aria-hidden="true">🏠</div>
-        <div>
-          <h3 id="svc-dom-title">Domestic Cleaning</h3>
-          <p>Reclaim your time and enjoy a spotless home. Our regular domestic cleaning service is designed for families who want a healthier living environment without the hassle.</p>
-          <p class="notice"><strong>SEO:</strong> Domestic Cleaning | Reliable House Cleaners Forest of Dean — Reclaim your time with our reliable domestic cleaning service in the Forest of Dean. A healthier, spotless home guaranteed with our unique 2-person teams. Get a quote.</p>
-        </div>
-      </article>
-
-      <article class="service" aria-labelledby="svc-gard-title">
-        <div class="icon" aria-hidden="true">🌿</div>
-        <div>
-          <h3 id="svc-gard-title">Gardening &amp; Grounds Maintenance</h3>
-          <p>First impressions count. Our gardening service keeps your property’s exterior looking pristine and welcoming — from lawn mowing and hedge trimming to seasonal clear-ups.</p>
-          <p class="notice"><strong>SEO:</strong> Gardening &amp; Grounds Maintenance Services | Forest of Dean — Professional gardening &amp; grounds maintenance for homes &amp; businesses in Gloucestershire. Lawn mowing, hedge trimming, clear-ups. Get a pristine first impression. Free quote.</p>
-        </div>
-      </article>
+  <section id="benefits" class="benefits">
+    <div class="benefit-card">
+      <div class="benefit-icon">★</div>
+      <h3>Quality Assurance</h3>
+      <p>Every job meets our DNA Standard – reliability and excellence.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">💬</div>
+      <h3>Transparent Pricing</h3>
+      <p>Clear quotes, no hidden costs, always upfront.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🛡️</div>
+      <h3>Trusted Professionals</h3>
+      <p>Screened, insured, and local experts you can count on.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🚀</div>
+      <h3>Fast Response</h3>
+      <p>Rapid scheduling and on-time arrival, every time.</p>
     </div>
   </section>
 
-  <!-- DNA STANDARD -->
-  <section id="dna-standard" class="wrap" aria-labelledby="dna-title">
-    <h2 id="dna-title">Our Promise, In Writing. The 50-Point DNA Standard.</h2>
-    <p class="lead">This is our guarantee of a comprehensive, consistent clean for every commercial and domestic client in Gloucestershire.</p>
-
-    <div class="checklist" id="checklist">
-      <div class="category">
-        <h4>Reception &amp; Entry (10 points)</h4>
-        <ul>
-          <li>Entrance doors: glass polished, handles sanitised</li>
-          <li>Reception desk: cleared, disinfected, polished</li>
-          <li>Doormats shaken/cleaned</li>
-          <li>Windows/frames spot-cleaned</li>
-          <li>Bins emptied &amp; liners replaced</li>
-          <li>High-touch points sanitised</li>
-          <li>Skirting boards dusted</li>
-          <li>Floor vacuumed/mopped</li>
-          <li>Signage and displays dusted</li>
-          <li>Air freshened/ventilated</li>
-        </ul>
-      </div>
-      <div class="category">
-        <h4>Main Areas (15 points)</h4>
-        <ul>
-          <li>All surfaces dusted and disinfected</li>
-          <li>Desks arranged, monitors wiped</li>
-          <li>Light switches sanitised</li>
-          <li>High-level dusting (cobwebs)</li>
-          <li>Upholstery vacuumed</li>
-          <li>Hard floors vacuumed/mopped</li>
-          <li>Low-level glass cleaned</li>
-          <li>Skirting/ledges wiped</li>
-          <li>Bins emptied &amp; replaced</li>
-          <li>Fingerprints removed from doors</li>
-          <li>Shared equipment sanitised</li>
-          <li>Cables and sockets dusted</li>
-          <li>Walls spot-cleaned</li>
-          <li>Supplies restocked where applicable</li>
-          <li>Final visual QA sweep</li>
-        </ul>
-      </div>
-      <div class="category">
-        <h4>Kitchen &amp; Breakout (10 points)</h4>
-        <ul>
-          <li>Sinks scrubbed &amp; taps polished</li>
-          <li>Microwaves in/out cleaned</li>
-          <li>Fridge handles &amp; exteriors wiped</li>
-          <li>Worktops disinfected</li>
-          <li>Cabinet fronts spot-cleaned</li>
-          <li>Kettles/toasters wiped</li>
-          <li>Bins emptied &amp; replaced</li>
-          <li>Floors vacuumed/mopped</li>
-          <li>Splashbacks polished</li>
-          <li>Consumables restocked</li>
-        </ul>
-      </div>
-      <div class="category">
-        <h4>Bathrooms (15 points)</h4>
-        <ul>
-          <li>Toilets &amp; urinals sanitised in/out</li>
-          <li>Sinks &amp; taps scrubbed/polished</li>
-          <li>Mirrors streak-free</li>
-          <li>Dispensers cleaned &amp; refilled</li>
-          <li>Door handles &amp; locks sanitised</li>
-          <li>Partitions wiped</li>
-          <li>Floors disinfected &amp; mopped</li>
-          <li>Bins emptied &amp; replaced</li>
-          <li>Vent/extractor dusted</li>
-          <li>High-touch points sanitised</li>
-          <li>Skirting/ledges wiped</li>
-          <li>Walls spot-cleaned</li>
-          <li>Limescale removed from fittings</li>
-          <li>Supplies restocked</li>
-          <li>Final visual QA sweep</li>
-        </ul>
-      </div>
+  <section id="services" class="services">
+    <div class="service-card">
+      <div class="service-title">General Maintenance</div>
+      <p>From repairs to upgrades, we handle all property needs.</p>
     </div>
-
-    <div class="download">
-      <button class="btn primary" id="downloadChecklist">📄 Download our Full 50-Point Checklist (PDF)</button>
-      <span class="notice">No email required. Instant download.</span>
+    <div class="service-card">
+      <div class="service-title">Cleaning Services</div>
+      <p>Professional cleaning for homes, offices, and rentals.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-title">Landscaping</div>
+      <p>Outdoor care, gardening, and seasonal cleanups.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-title">Handyman Tasks</div>
+      <p>Quick fixes, installations, and assembly done right.</p>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="wrap" aria-labelledby="about-title">
-    <h2 id="about-title">More Than a Cleaning Company. We’re Your Local Property Care Partners.</h2>
-    <div class="grid cols-2">
-      <div class="card">
-        <h3>Our Story</h3>
-        <p>DNA Solutions was founded with a simple belief: property care should be reliable, professional, and delivered with pride. As a local family, we understand the importance of trust and community. We’re not a franchise — we’re your neighbours, committed to enhancing the spaces where you live and work.</p>
-      </div>
-      <div class="card">
-        <h3>Our Values</h3>
-        <ul>
-          <li><strong>Excellence</strong> – Our 50-point standard ensures nothing is missed</li>
-          <li><strong>Reliability</strong> – If we say we’ll be there, we’ll be there</li>
-          <li><strong>Integrity</strong> – Honest pricing, honest work</li>
-          <li><strong>Investment</strong> – In our community, our clients, and our team</li>
-        </ul>
-      </div>
+  <section id="dna-standard" class="services">
+    <div class="service-card">
+      <div class="service-title">DNA Standard Checklist</div>
+      <ul>
+        <li>Screened & insured technicians</li>
+        <li>Upfront pricing & quotes</li>
+        <li>Service guarantees</li>
+        <li>Responsive support</li>
+      </ul>
+      <button class="btn-primary">Download Full Checklist</button>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="wrap" aria-labelledby="contact-title">
-    <h2 id="contact-title">Ready for a Cleaner, Greener Property? Let’s Talk.</h2>
-    <p class="lead">Fill out the form and we’ll get back to you within 24 hours with a free, no-obligation quote tailored to you.</p>
-
-    <form id="quoteForm" novalidate>
-      <div>
-        <label for="name">Name</label>
-        <input id="name" name="name" autocomplete="name" required placeholder="Jane Doe">
-      </div>
-      <div class="grid cols-2">
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@example.com">
-        </div>
-        <div>
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+44 1234 567890">
-        </div>
-      </div>
-
-      <div class="grid cols-2">
-        <div>
-          <label for="ptype">Property Type</label>
-          <select id="ptype" name="propertyType" required>
-            <option value="">Select…</option>
-            <option>Commercial</option>
-            <option>Domestic</option>
-          </select>
-        </div>
-        <div>
-          <label for="stype">Service Type</label>
-          <select id="stype" name="serviceType" required>
-            <option value="">Select…</option>
-            <option>Cleaning</option>
-            <option>Gardening</option>
-            <option>Both</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required placeholder="Tell us about your property, frequency, and any specifics…"></textarea>
-      </div>
-
-      <button class="cta" type="submit" aria-label="Submit to get a free quote">Request Free Quote</button>
-      <p id="formMsg" class="notice" role="status" aria-live="polite"></p>
-
-      <div class="trust" aria-label="Trust signals">
-        <span>✅ Fully Insured</span>
-        <span>⭐ 5-Star Rated on Google</span>
-        <span>🏡 Local Forest of Dean Business</span>
-      </div>
+  <section id="contact" class="contact-section">
+    <form class="contact-form">
+      <h2>Contact Us</h2>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn-contact">Send Message</button>
     </form>
-
-    <div class="grid cols-2" style="margin-top:18px">
-      <div class="card">
-        <h3>Contact Information</h3>
-        <p><strong>Phone:</strong> <a href="tel:+441234567890">+44 1234 567890</a><br>
-           <strong>Email:</strong> <a href="mailto:hello@dnasolutions.co.uk">hello@dnasolutions.co.uk</a></p>
-        <p><strong>Service Areas:</strong> Gloucestershire, Forest of Dean, and surrounding areas</p>
-      </div>
-      <div class="card">
-        <h3>Opening Hours</h3>
-        <p>Mon–Fri: 08:00–18:00<br>Sat–Sun: Closed (by appointment)</p>
-      </div>
-    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div class="wrap">
-      <div class="footgrid">
-        <div>
-          <h3 style="margin:0 0 6px">DNA Solutions</h3>
-          <p>Professional Cleaning &amp; Gardening Services in Gloucestershire</p>
-        </div>
-        <div>
-          <h4 style="margin:0 0 6px">Navigation</h4>
-          <p><a href="#home">Home</a> · <a href="#services">Services</a> · <a href="#dna-standard">The DNA Standard</a> · <a href="#about">About</a> · <a href="#contact">Contact</a></p>
-        </div>
-        <div>
-          <h4 style="margin:0 0 6px">Get in touch</h4>
-          <p><a href="tel:+441234567890">+44 1234 567890</a><br><a href="mailto:hello@dnasolutions.co.uk">hello@dnasolutions.co.uk</a></p>
-        </div>
-      </div>
-      <div class="copyright">
-        © 2024 DNA Solutions. All rights reserved. · Fully Insured · Local Family Business
-      </div>
+  <footer>
+    <img src="assets/logo.svg" alt="DNA Solutions logo" class="logo" />
+    <div class="footer-socials">
+      <a href="#" title="Facebook">🟦</a>
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="LinkedIn">🔗</a>
     </div>
+    <p>&copy; 2025 DNA Solutions. All rights reserved.</p>
   </footer>
-
-  <!-- Scripts: router/SEO, form handling, PDF -->
-  <script>
-    // --- SPA SEO mapping ---
-    const SEO = {
-      'home': {
-        title: 'DNA Solutions | Commercial & Domestic Cleaning Gloucestershire',
-        desc: 'Professional 2-person cleaning & gardening teams in the Forest of Dean. Our 50-point standard ensures a deeper, more reliable clean. Fully insured. Get your free quote today.'
-      },
-      'services': {
-        title: 'Professional Cleaning & Gardening Services | DNA Solutions',
-        desc: 'Comprehensive property care solutions for Gloucestershire homes and businesses. Commercial cleaning, domestic cleaning, and professional gardening services.'
-      },
-      'dna-standard': {
-        title: 'Our 50-Point Cleaning Checklist | The DNA Standard',
-        desc: 'Download our free 50-point checklist. This is our guarantee of a comprehensive, consistent clean for every commercial and domestic client in Gloucestershire. See our promise.'
-      },
-      'about': {
-        title: 'About Our Local Family Business | DNA Solutions Gloucestershire',
-        desc: 'Meet the local family behind DNA Solutions. Learn why our values of excellence, reliability, and integrity are at the heart of our property care services in Gloucestershire.'
-      },
-      'contact': {
-        title: 'Free Quote | Contact DNA Solutions Gloucestershire Today',
-        desc: 'Ready for a professional clean? Get your free, no-obligation quote from Gloucestershire’s trusted cleaning & gardening service. We respond within 24 hours.'
-      }
-    };
-    const metaDesc = document.querySelector('meta[name="description"]');
-
-    function applySEO(id){
-      const data = SEO[id] || SEO.home;
-      document.title = data.title;
-      metaDesc.setAttribute('content', data.desc);
-    }
-
-    function setActiveLink(id){
-      document.querySelectorAll('nav a').forEach(a=>{
-        const active = a.getAttribute('data-route') === id;
-        a.classList.toggle('active', active);
-        if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
-      });
-    }
-
-    function navigate(){
-      const id = (location.hash.replace('#','') || 'home');
-      const el = document.getElementById(id);
-      setActiveLink(id); applySEO(id);
-      if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-
-    // Observe sections to update hash on scroll
-    const sections = [...document.querySelectorAll('main[id], section[id]')];
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if (e.isIntersecting){
-          const id = e.target.id;
-          setActiveLink(id); applySEO(id);
-          history.replaceState(null,'','#'+id);
-        }
-      });
-    }, {rootMargin:'-60% 0px -35% 0px', threshold:[0.25,0.5,0.75]});
-    sections.forEach(s=>io.observe(s));
-
-    window.addEventListener('hashchange', navigate);
-    window.addEventListener('DOMContentLoaded', navigate);
-
-    // --- Form validation + mailto fallback ---
-    (function(){
-      const form = document.getElementById('quoteForm');
-      const msg  = document.getElementById('formMsg');
-      const emailTo = 'hello@dnasolutions.co.uk'; // change if needed
-
-      function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
-      function validPhone(v){return /^[\d\s()+-]{7,}$/.test(v);}
-      const enc = encodeURIComponent;
-
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        msg.className='notice'; msg.textContent='';
-        const data = Object.fromEntries(new FormData(form).entries());
-        const errors = [];
-        if(!data.name) errors.push('Name is required.');
-        if(!data.email || !validEmail(data.email)) errors.push('A valid email is required.');
-        if(!data.phone || !validPhone(data.phone)) errors.push('A valid phone is required.');
-        if(!data.propertyType) errors.push('Select a property type.');
-        if(!data.serviceType) errors.push('Select a service type.');
-        if(!data.message) errors.push('Please add a brief message.');
-        if(errors.length){ msg.className='error'; msg.textContent='❗ '+errors.join(' '); return; }
-
-        const subject = `Free Quote Request — ${data.propertyType} / ${data.serviceType}`;
-        const body = [
-          `Name: ${data.name}`,
-          `Email: ${data.email}`,
-          `Phone: ${data.phone}`,
-          `Property Type: ${data.propertyType}`,
-          `Service Type: ${data.serviceType}`,
-          '',
-          'Message:',
-          data.message
-        ].join('\n');
-
-        location.href = `mailto:${emailTo}?subject=${enc(subject)}&body=${enc(body)}`;
-        msg.className='success';
-        msg.textContent='✅ Thanks! We’ve opened your email client with the request. We’ll confirm within 24 hours.';
-        form.reset();
-      });
-    })();
-
-    // --- Generate PDF from checklist ---
-    (function(){
-      const btn = document.getElementById('downloadChecklist');
-      if(!btn) return;
-      btn.addEventListener('click', ()=>{
-        const { jsPDF } = window.jspdf || {};
-        if (!jsPDF) { alert('PDF library failed to load.'); return; }
-        const doc = new jsPDF({unit:'pt', format:'a4'});
-        doc.setFillColor(11,102,35); doc.rect(0,0,595,70,'F');
-        doc.setFont('helvetica','bold'); doc.setFontSize(18); doc.setTextColor('#fff');
-        doc.text('DNA Solutions — 50-Point Cleaning Checklist', 32, 44);
-        doc.setFont('helvetica','normal'); doc.setTextColor('#222'); doc.setFontSize(11);
-
-        const cats = [...document.querySelectorAll('#checklist .category')].map(cat=>{
-          return {
-            title: cat.querySelector('h4').textContent.trim(),
-            items: [...cat.querySelectorAll('li')].map(li=>li.textContent.trim())
-          }
-        });
-
-        let x = 32, y = 100, colW = 255, gap = 26, col = 0;
-        cats.forEach(c=>{
-          doc.setTextColor('#0B6623'); doc.setFont('helvetica','bold'); doc.setFontSize(13);
-          doc.text(c.title, x + col*(colW+gap), y);
-          y += 10; doc.setFont('helvetica','normal'); doc.setTextColor('#222'); doc.setFontSize(11);
-
-          const left = x + col*(colW+gap);
-          c.items.forEach(item=>{
-            const lines = doc.splitTextToSize('• '+item, colW);
-            if (y + lines.length*14 > 770){
-              if (col===0){ col=1; y=100; }
-              else { doc.addPage(); col=0; y=100; }
-            }
-            doc.text(lines, left, y+14);
-            y += lines.length*14;
-          });
-          y += 18;
-          if (y>770){ if (col===0){col=1;y=100}else{doc.addPage();col=0;y=100} }
-        });
-
-        doc.setFontSize(10); doc.setTextColor('#666');
-        doc.text('DNA Solutions • Professional Cleaning & Gardening Services • Gloucestershire', 32, 820);
-        doc.save('DNA-Standard-50-Point-Checklist.pdf');
-      });
-    })();
-  </script>
 </body>
 </html>
